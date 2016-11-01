@@ -3,56 +3,85 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     <title>Mii-cc16-17 by mmaguero</title>
   </head>
 
   <body>
-    <header>
+    <div id="container">
       <div class="inner">
-        <h1>Mii-cc16-17</h1>
-        <h2>Proyecto de la asignatura &quot;Cloud Computing: Fundamentos e Infraestructura&quot; del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr</h2>
-        <a href="https://github.com/mmaguero/MII-CC16-17" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
+        <header>
+          <h1>Mii-cc16-17</h1>
+          <h2>Proyecto de la asignatura &quot;Cloud Computing: Fundamentos e Infraestructura&quot; del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/mmaguero/MII-CC16-17/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/mmaguero/MII-CC16-17/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/mmaguero/MII-CC16-17" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
           <h1>
-<a id="mii-cc16-17" class="anchor" href="#mii-cc16-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MII-CC16-17</h1>
+<a id="becalbot--bot-de-telegram-para-la-gestión-de-requerimientos" class="anchor" href="#becalbot--bot-de-telegram-para-la-gesti%C3%B3n-de-requerimientos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>becalbot : Bot de Telegram para la gestión de requerimientos</h1>
 
-	<p>Proyecto de <i>Software Libre</i> de la asignatura Cloud Computing: Fundamentos e Infraestructura" del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr</p>
+<p>Consiste en el despliegue de un <strong>bot de telegram</strong>, para lo que utilizaremos <em>pyTelegramBotAPI</em>, una API para realizar bots en Telegram.</p>
+
+<h2>
+<a id="para-qué" class="anchor" href="#para-qu%C3%A9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Para qué</h2>
+
+<p>Este bot apoyará a las gestiones de requerimientos de un ente gubernamental del Paraguay: <a href="http://www.becal.gov.py/"><em>El Programa Nacional de Becas en el Exterior para el Fortalecimiento de la Investigación, la Innovación y la Educación del Paraguay Don Carlos Antonio López</em></a>. </p>
+
+<h2>
+<a id="por-qué" class="anchor" href="#por-qu%C3%A9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Por qué</h2>
+
+<p>Actualmente, debido al gran número de beneficiarios del programa gubernamental, se hace díficil poder gestionar las solicitudes de requerimientos en tiempo y en forma de todos ellos. Estas solicitudes se realizan vía e-mail, incluso la confirmación de recepción de las mismas lleva días, por lo que su resolución y respuesta muchos días más, por lo tanto un bot que gestione y administre estos requerimientos resulta útil.</p>
+
+<h1>
+<a id="tecnología" class="anchor" href="#tecnolog%C3%ADa" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tecnología</h1>
+
+<h2>
+<a id="arquitectura" class="anchor" href="#arquitectura" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Arquitectura</h2>
+
+<p>En principio utilizaremos la arquitectura basada en microservicios, donde estos son independientes entre si y por lo tanto, pueden ser desarrollados, desplegados y testeados de manera indiviual. Es deseable que el bot funcionará como API, donde el usuario se comunicara con el bot lo más natural posible.</p>
+
+<h2>
+<a id="microservicios" class="anchor" href="#microservicios" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Microservicios</h2>
+
+<p>Es ideal contar con al menos estos dos microservicios:</p>
+
+<h3>
+<a id="gestión-de-solicitudes" class="anchor" href="#gesti%C3%B3n-de-solicitudes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gestión de solicitudes</h3>
+
+<p>Almacenará información sobre los detalles de las solicitudes y su estado, utilizaremos una base de datos Relacional u Objeto/Relacional (oomo MySQL O PostgreSQL) con Python.</p>
+
+<h3>
+<a id="gestión-de-tareas" class="anchor" href="#gesti%C3%B3n-de-tareas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gestión de tareas</h3>
+
+<p>Administrará el avance y resolución de los requerimientos solicitados al bot, podría ser una web simple o responsiva en HTML, CSS y JS, con una base de datos Orientada a Objetos u Objeto/Relacional (como MongoDB o PostgreSQL)</p>
+
+<h2>
+<a id="licencia" class="anchor" href="#licencia" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licencia</h2>
+
+<p>GNU GENERAL PUBLIC LICENSE (Versión 3, 29 de Junio de 2007).</p>
+        </section>
+
+        <footer>
+          Mii-cc16-17 is maintained by <a href="https://github.com/mmaguero">mmaguero</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
         
-	
-	</section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/mmaguero/MII-CC16-17/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/mmaguero/MII-CC16-17/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/mmaguero/MII-CC16-17"></a> is maintained by <a href="https://github.com/mmaguero">mmaguero</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
       </div>
     </div>
-
-  
   </body>
 </html>
