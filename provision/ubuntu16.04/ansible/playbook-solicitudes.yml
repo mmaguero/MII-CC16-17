@@ -1,0 +1,21 @@
+- hosts: appserver
+  sudo: true
+  tasks:
+  - name: Actualizar cache
+    apt: update_cache=yes
+  - name: Instalar Git
+    apt: name=git state=present  
+  - name: Instalar PostgreSQL
+    apt: name=postgresql state=present
+    apt: name=postgresql-contrib state=present
+  - name: Instalar Pip
+    apt: name=python-setuptools state=present
+    apt: name=python-dev state=present
+    apt: name=python-pip state=present
+    apt: name=python-psycopg2 state=present
+  - name: Instalar Flask
+    pip: name=Flask
+  - name: Instalamos pyTelegramBotAPI
+    pip: name=pyTelegramBotAPI
+  - name: Instalar Flask-SQLAlchemy
+    pip: name=Flask-SQLAlchemy

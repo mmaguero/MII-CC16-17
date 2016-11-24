@@ -1,0 +1,3 @@
+##tareas
+[webserver]
+x.x.x.x ansible_user='ubuntu'

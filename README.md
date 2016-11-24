@@ -1,7 +1,7 @@
 # MII-CC16-17
 Proyecto de la asignatura **Cloud Computing: Fundamentos e Infraestructura** del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr
 
-Actualizado el 31/10/2016
+Actualizado el 23/11/2016
 
 # becalbot : Bot de Telegram para la gestión de requerimientos 
 Consiste en el despliegue de un **bot de telegram**, para lo que utilizaremos *pyTelegramBotAPI*, una API para realizar bots en Telegram.
@@ -20,11 +20,36 @@ En principio utilizaremos la arquitectura basada en microservicios, donde estos 
 Es ideal contar con al menos estos dos microservicios:
 
 ### Gestión de solicitudes 
-Almacenará información sobre los detalles de las solicitudes y su estado, utilizaremos una base de datos Relacional u Objeto/Relacional (oomo MySQL O PostgreSQL) con Python.
+Almacenará información sobre los detalles de las solicitudes y su estado, utilizaremos una base de datos Relacional u Objeto/Relacional (como MySQL o PostgreSQL) con Python.
 
 ### Gestión de tareas
 Administrará el avance y resolución de los requerimientos solicitados al bot, podría ser una web simple o responsiva en HTML, CSS y JS, con una base de datos Orientada a Objetos u Objeto/Relacional (como MongoDB o PostgreSQL)
 
-## Licencia
+#Provisionamiento
 
+**¿Dónde?** 
+- Ubuntu Server 16.04 en AWS (Amazon Web Services) para la *Gestión de solicitudes*
+- Ubuntu Server 14.04 también en AWS para la *Gestión de tareas*.
+
+**¿Por qué dos instancias?**
+En la experiencia, la arquitectura de microservicios así lo sugiere, entonces decidí priorizar una instancia para cada servicio, para que puedan trabajar totalmente independientes.
+
+**¿Por qué AWS y Ubuntu Server?**
+AWS ofrece alternativas gratuitas y de bajo coste para estudiantes de la universidad y usuarios de github, además es la pionera en este ámbito y unas de las más utilizadas. Ubuntu Server, tanto para su versión 14.04 como 16.04, es una distribución Linux muy popular y existe mucha documentación para casi cualquier cosa que se desee hacer.
+
+##Sistema de provisionamiento
+
+###Ansible
+Su elección se basa en que este sistema Ansible funciona sobre Python (instalado por defecto en la mayoría de las imágenes), es muy práctico en su uso y posee el apoyo de Red Hat Inc.
+
+###Chef
+Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utilizarlo resulta bastante sencillo, aunque puede terminar resultando no muy práctico por su sistema de directorios, propios de usuarios más sotisficados.
+
+###¿Cómo provisionar?
+- Paquetes: Git, MongoDB, NodeJS, ndm; y con ndm: Mongoose.
+  Imagen de Ubuntu Server 14.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/chef). 
+- Paquetes: Git, PostgreSQL, pip; y con pip: Flask, FLask-SQLAlchemy, pyTelegramBotAPI.
+  Imagen de Ubuntu Server 16.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/chef). 
+
+## Licencia
 GNU GENERAL PUBLIC LICENSE (Versión 3, 29 de Junio de 2007).

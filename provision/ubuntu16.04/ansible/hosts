@@ -1,0 +1,3 @@
+##solicitudes
+[appserver]
+x.x.x.x ansible_user='ubuntu'
