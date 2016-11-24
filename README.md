@@ -27,14 +27,14 @@ Administrará el avance y resolución de los requerimientos solicitados al bot, 
 
 #Provisionamiento
 
-**¿Dónde?** 
+##¿Dónde? 
 - Ubuntu Server 16.04 en AWS (Amazon Web Services) para la *Gestión de solicitudes*
 - Ubuntu Server 14.04 también en AWS para la *Gestión de tareas*.
 
-**¿Por qué dos instancias?**
+##¿Por qué dos instancias?
 En la experiencia, la arquitectura de microservicios así lo sugiere, entonces decidí priorizar una instancia para cada servicio, para que puedan trabajar totalmente independientes.
 
-**¿Por qué AWS y Ubuntu Server?**
+##¿Por qué AWS y Ubuntu Server?
 AWS ofrece alternativas gratuitas y de bajo coste para estudiantes de la universidad y usuarios de github, además es la pionera en este ámbito y unas de las más utilizadas. Ubuntu Server, tanto para su versión 14.04 como 16.04, es una distribución Linux muy popular y existe mucha documentación para casi cualquier cosa que se desee hacer.
 
 ##Sistema de provisionamiento
@@ -46,10 +46,10 @@ Su elección se basa en que este sistema Ansible funciona sobre Python (instalad
 Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utilizarlo resulta bastante sencillo, aunque puede terminar resultando no muy práctico por su sistema de directorios, propios de usuarios más sotisficados.
 
 ###¿Cómo provisionar?
-- Paquetes: Git, MongoDB, NodeJS, ndm; y con ndm: Mongoose.
-  Imagen de Ubuntu Server 14.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/chef). 
-- Paquetes: Git, PostgreSQL, pip; y con pip: Flask, FLask-SQLAlchemy, pyTelegramBotAPI.
-  Imagen de Ubuntu Server 16.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/chef). 
++ Paquetes: Git, MongoDB, NodeJS, ndm; y con ndm: Mongoose.
+  - Imagen de Ubuntu Server 14.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/chef). 
++ Paquetes: Git, PostgreSQL, pip; y con pip: Flask, FLask-SQLAlchemy, pyTelegramBotAPI.
+  - Imagen de Ubuntu Server 16.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/chef). 
 
 ## Licencia
 GNU GENERAL PUBLIC LICENSE (Versión 3, 29 de Junio de 2007).
