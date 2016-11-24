@@ -3,10 +3,8 @@
 + Instalar Ansible en la máquina anfitrión, en nuestro caso *Ubuntu*:
   - ``` sudo apt-get install ansible ```
 + Modificar el fichero hosts de ansible con la IP y usuario correspondiente a la máquina virtual AWS que contenga una imagen de Ubuntu Server 14.04:
-  - ``` 
-[aws]
-x.x.x.x. ansible_user = 'user' 
-```
+  - ``` [aws]
+        x.x.x.x. ansible_user = 'user' ```
 + Agregar como variable de entorno el archivo hosts:
   - ``` export ANSIBLE_HOSTS=/ubicacion/hosts ```
 + Conocer la ubicación del archivo de la clave privada (.pem) para conectarse a la máquina virtual de AWS.
