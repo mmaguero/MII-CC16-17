@@ -10,7 +10,7 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Mii-cc16-17 by mmaguero</title>
+    <title>BeCALBot by mmaguero</title>
   </head>
 
   <body>
@@ -18,7 +18,7 @@
       <div class="inner">
 
         <header>
-          <h1>Mii-cc16-17</h1>
+          <h1>BeCALBot</h1>
           <h2>Proyecto de la asignatura &quot;Cloud Computing: Fundamentos e Infraestructura&quot; del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr</h2>
         </header>
 
@@ -32,6 +32,13 @@
 
         <section id="main_content">
           <h1>
+<a id="mii-cc16-17" class="anchor" href="#mii-cc16-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MII-CC16-17</h1>
+
+<p>Proyecto de la asignatura <strong>Cloud Computing: Fundamentos e Infraestructura</strong> del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr</p>
+
+<p>Actualizado el 23/11/2016</p>
+
+<h1>
 <a id="becalbot--bot-de-telegram-para-la-gestión-de-requerimientos" class="anchor" href="#becalbot--bot-de-telegram-para-la-gesti%C3%B3n-de-requerimientos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>becalbot : Bot de Telegram para la gestión de requerimientos</h1>
 
 <p>Consiste en el despliegue de un <strong>bot de telegram</strong>, para lo que utilizaremos <em>pyTelegramBotAPI</em>, una API para realizar bots en Telegram.</p>
@@ -62,12 +69,65 @@
 <h3>
 <a id="gestión-de-solicitudes" class="anchor" href="#gesti%C3%B3n-de-solicitudes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gestión de solicitudes</h3>
 
-<p>Almacenará información sobre los detalles de las solicitudes y su estado, utilizaremos una base de datos Relacional u Objeto/Relacional (oomo MySQL O PostgreSQL) con Python.</p>
+<p>Almacenará información sobre los detalles de las solicitudes y su estado, utilizaremos una base de datos Relacional u Objeto/Relacional (como MySQL o PostgreSQL) con Python.</p>
 
 <h3>
 <a id="gestión-de-tareas" class="anchor" href="#gesti%C3%B3n-de-tareas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gestión de tareas</h3>
 
 <p>Administrará el avance y resolución de los requerimientos solicitados al bot, podría ser una web simple o responsiva en HTML, CSS y JS, con una base de datos Orientada a Objetos u Objeto/Relacional (como MongoDB o PostgreSQL)</p>
+
+<h1>
+<a id="provisionamiento" class="anchor" href="#provisionamiento" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Provisionamiento</h1>
+
+<h2>
+<a id="dónde" class="anchor" href="#d%C3%B3nde" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>¿Dónde?</h2>
+
+<ul>
+<li>Ubuntu Server 16.04 en AWS (Amazon Web Services) para la <em>Gestión de solicitudes</em>
+</li>
+<li>Ubuntu Server 14.04 también en AWS para la <em>Gestión de tareas</em>.</li>
+</ul>
+
+<h2>
+<a id="por-qué-dos-instancias" class="anchor" href="#por-qu%C3%A9-dos-instancias" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>¿Por qué dos instancias?</h2>
+
+<p>En la experiencia, la arquitectura de microservicios así lo sugiere, entonces decidí priorizar una instancia para cada servicio, para que puedan trabajar totalmente independientes.</p>
+
+<h2>
+<a id="por-qué-aws-y-ubuntu-server" class="anchor" href="#por-qu%C3%A9-aws-y-ubuntu-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>¿Por qué AWS y Ubuntu Server?</h2>
+
+<p>AWS ofrece alternativas gratuitas y de bajo coste para estudiantes de la universidad y usuarios de github, además es la pionera en este ámbito y unas de las más utilizadas. Ubuntu Server, tanto para su versión 14.04 como 16.04, es una distribución Linux muy popular y existe mucha documentación para casi cualquier cosa que se desee hacer.</p>
+
+<h2>
+<a id="sistema-de-provisionamiento" class="anchor" href="#sistema-de-provisionamiento" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sistema de provisionamiento</h2>
+
+<h3>
+<a id="ansible" class="anchor" href="#ansible" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ansible</h3>
+
+<p>Su elección se basa en que este sistema Ansible funciona sobre Python (instalado por defecto en la mayoría de las imágenes), es muy práctico en su uso y posee el apoyo de Red Hat Inc.</p>
+
+<h3>
+<a id="chef" class="anchor" href="#chef" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chef</h3>
+
+<p>Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utilizarlo resulta bastante sencillo, aunque puede terminar resultando no muy práctico por su sistema de directorios, propios de usuarios más sotisficados.</p>
+
+<h3>
+<a id="cómo-provisionar" class="anchor" href="#c%C3%B3mo-provisionar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>¿Cómo provisionar?</h3>
+
+<ul>
+<li>Paquetes: Git, MongoDB, NodeJS, ndm; y con ndm: Mongoose.
+
+<ul>
+<li>Imagen de Ubuntu Server 14.04 sobre AWS, para Ansible clic <a href="https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/ansible">aquí</a>, para Chef <a href="https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/chef">aquí</a>. </li>
+</ul>
+</li>
+<li>Paquetes: Git, PostgreSQL, pip; y con pip: Flask, FLask-SQLAlchemy, pyTelegramBotAPI.
+
+<ul>
+<li>Imagen de Ubuntu Server 16.04 sobre AWS, para Ansible clic <a href="https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/ansible">aquí</a>, para Chef <a href="https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/chef">aquí</a>. </li>
+</ul>
+</li>
+</ul>
 
 <h2>
 <a id="licencia" class="anchor" href="#licencia" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licencia</h2>
@@ -76,7 +136,7 @@
         </section>
 
         <footer>
-          Mii-cc16-17 is maintained by <a href="https://github.com/mmaguero">mmaguero</a><br>
+          BeCALBot is maintained by <a href="https://github.com/mmaguero">mmaguero</a><br>
           This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
