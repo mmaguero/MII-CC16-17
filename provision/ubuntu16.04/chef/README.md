@@ -9,6 +9,6 @@
   - scp
 ``` scp -r -i /ubicacion/clave_privada.pem nombre_carpeta usuario@servidor:ruta_servidor_donde_colocar ```
 + Ejecutar la orden con chef-solo:
-  - ``` sudo chef-solo -c GEventator/provision/Chef/chef/solo.rb ```
+  - ``` sudo chef-solo -c /ubicacion/chef/solo.rb ```
 
 [Aquí] (https://github.com/mmaguero/Ejercicios-CC16-17-MII/tree/master/imgs/hitos/2/chef/16) unos print screens del proceso...
