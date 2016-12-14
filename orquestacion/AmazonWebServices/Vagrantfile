@@ -1,0 +1,56 @@
+Vagrant.configure(2) do |config|
+
+	config.vm.define :tareas do |tareas|
+		tareas.vm.host_name = "tareas"
+		tareas.vm.provider :aws do |aws, override|
+			aws.access_key_id = ENV['AWS_KEY_ID']
+			aws.secret_access_key = ENV['AWS_SECRET_KEY']
+			aws.keypair_name = ENV['AWS_KEY_NAME']
+
+			aws.ami = "ami-51db1d3e" #ubuntu14.04
+			aws.region = "eu-central-1" #Frankfurt
+			aws.instance_type = "t2.micro"
+			aws.security_groups = ["value"] #previous create in web console
+
+			override.vm.box = "cloud"
+			override.ssh.username = "ubuntu"
+			override.ssh.private_key_path = ENV['AWS_KEY_PATH']
+		end
+	end
+
+	config.vm.define :solicitudes do |solicitudes|
+		solicitudes.vm.host_name = "solicitudes"
+		solicitudes.vm.provider :aws do |aws, override|
+			aws.access_key_id = ENV['AWS_KEY_ID']
+			aws.secret_access_key = ENV['AWS_SECRET_KEY']
+			aws.keypair_name = ENV['AWS_KEY_NAME']
+
+			aws.ami = "ami-b0db1ddf" #ubuntu16.04
+			aws.region = "eu-central-1" #Frankfurt
+			aws.instance_type = "t2.micro"
+			aws.security_groups = ["value"] #previous create in web console
+
+			override.vm.box = "cloud"
+			override.ssh.username = "ubuntu"
+			override.ssh.private_key_path = ENV['AWS_KEY_PATH']
+		end
+	end
+
+       #internet access is required
+
+       config.vm.define :tareas do |machine|
+        machine.vm.hostname = "tareas"
+        config.vm.provision "chef_solo" do |chef|
+         chef.add_recipe "packages-tareas"
+        end
+       end
+
+       config.vm.define :solicitudes do |machine|
+        machine.vm.hostname = "solicitudes"
+        config.vm.provision "chef_solo" do |chef|
+         chef.add_recipe "packages-solicitudes"
+        end
+       end
+
+end
+

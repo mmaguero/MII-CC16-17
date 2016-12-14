@@ -1,7 +1,7 @@
 # MII-CC16-17
 Proyecto de la asignatura **Cloud Computing: Fundamentos e Infraestructura** del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr
 
-Actualizado el 23/11/2016
+Actualizado el 14/12/2016
 
 # becalbot : Bot de Telegram para la gestión de requerimientos 
 Consiste en el despliegue de un **bot de telegram**, para lo que utilizaremos *pyTelegramBotAPI*, una API para realizar bots en Telegram.
@@ -50,6 +50,12 @@ Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utili
   - Imagen de Ubuntu Server 14.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu14.04/chef). 
 + Paquetes: Git, PostgreSQL, pip; y con pip: Flask, FLask-SQLAlchemy, pyTelegramBotAPI.
   - Imagen de Ubuntu Server 16.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/chef). 
+
+##Orquestación
+
++ Herramienta: Vagrant. 
++ Objetivo: Orquestar un ambiente software completo, clic [aquí]().
++ Se elige trabajar con instancias de AWS y VirtualBox por su popularidad y estabilidad, OpenStack por su gran capacidad y alcance (aka TryStack).
 
 ## Licencia
 GNU GENERAL PUBLIC LICENSE (Versión 3, 29 de Junio de 2007).
