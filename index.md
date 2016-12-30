@@ -52,10 +52,14 @@ Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utili
   - Imagen de Ubuntu Server 16.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/chef). 
 
 ##Orquestación
-
 + Herramienta: Vagrant. 
 + Objetivo: Orquestar un ambiente software completo, clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/orquestacion/).
 + Se elige trabajar con instancias de AWS y VirtualBox por su popularidad y estabilidad, OpenStack por su gran capacidad y alcance (aka TryStack).
+
+## Contenedores
++ Herramienta: Docker. 
++ Objetivo: Valerse de Docker para el uso de contenedores en un ambiente completo: crear un repositorio en Docker Hub sincronizado con GitHub y una instancia en AWS/local; clic [aquí](contenedor)
++ De esta manera se cubren las herramientas de mayor aceptación: Docker + GitHub + AWS
 
 ## Licencia
 GNU GENERAL PUBLIC LICENSE (Versión 3, 29 de Junio de 2007).
