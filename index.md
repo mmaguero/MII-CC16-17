@@ -13,6 +13,7 @@ Este bot apoyará a las gestiones de requerimientos de un ente gubernamental del
 Actualmente, debido al gran número de beneficiarios del programa gubernamental, se hace díficil poder gestionar las solicitudes de requerimientos en tiempo y en forma de todos ellos. Estas solicitudes se realizan vía e-mail, incluso la confirmación de recepción de las mismas lleva días, por lo que su resolución y respuesta muchos días más, por lo tanto un bot que gestione y administre estos requerimientos resulta útil.
 
 # Tecnología
+
 ## Arquitectura
 En principio utilizaremos la arquitectura basada en microservicios, donde estos son independientes entre si y por lo tanto, pueden ser desarrollados, desplegados y testeados de manera indiviual. Es deseable que el bot funcionará como API, donde el usuario se comunicara con el bot lo más natural posible.
 
