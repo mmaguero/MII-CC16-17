@@ -8,19 +8,19 @@ Para la instalación en Ubuntu, se puede seguir esta [guía](https://docs.docker
 
 Con Docker instalado, se puede instalar desde Docker Hub la imagen del proyecto (Ubuntu, en su última versión):
 
-`sudo docker pull mmaguero/becalbot`
+`sudo docker pull mmaguero/mii-cc16-17`
 
 Una vez instalado el contenedor, podemos acceder al mismo:
 
-`sudo docker run -it mmaguero/becal bash`
+`sudo docker run -it mmaguero/mii-cc16-17 bash`
 
 Para crear su propio contenedor y sincronizarlo con GitHub puede seguir este [link](https://docs.docker.com/docker-hub/builds/).
 
-[Aquí](https://github.com/mmaguero/MII-CC16-17/blob/master/Dockerfile) puede ver el Dockerfile del contenedor instanciado, o bien, [aquí](https://hub.docker.com/r/mmaguero/mii-cc16-17/~/dockerfile/).
+[Aquí](https://github.com/mmaguero/MII-CC16-17/blob/master/Dockerfile) puede ver el Dockerfile del contenedor instanciado, o bien, [aquí](https://hub.docker.com/r/mmaguero/mii-cc16-17/).
 
 Incluso instalando [docker-machine](https://docs.docker.com/machine/) podemos instanciar una imagen en AWS siguiendo esta [guía](https://docs.docker.com/machine/examples/aws/). Una vez instalado y configurado, ejecutamos:
 
-`sudo docker run -d -p 90:80 --name myserver mmaguero/becalbot`
+`sudo docker run -d -p 90:80 --name myserver mmaguero/mii-cc16-17`
 
 Arrancamos un contenedor, que llamaremos myserver, mapeando el puerto 80 del contenedor con el 90 de nuestra máquina, a partir de la imagen *mmaguero/becalbot* (http://localhost:90/)
 
