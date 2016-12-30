@@ -2,7 +2,7 @@ title: BeCALBot
 description: "Proyecto de la asignatura \"Cloud Computing: Fundamentos e Infraestructura\" del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr"
 google_analytics: 
 show_downloads: true
-theme: jekyll-theme-tactile
+theme: jekyll-theme-slate
 
 gems:
   - jekyll-mentions
