@@ -60,8 +60,8 @@ Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utili
 ## Contenedores
 
 + Herramienta: Docker. 
-+ Objetivo: Valerse de Docker para el uso de contenedores en un ambiente completo: crear un repositorio en Docker Hub sincronizado con GitHub y una instancia en AWS/local; clic [aquí](contenedor)
-+ De esta manera se cubren las herramientas de mayor aceptación: Docker + GitHub + AWS 
++ Objetivo: Valerse de Docker para el uso de contenedores en un ambiente completo: crear un repositorio en Docker Hub sincronizado con GitHub y una instancia en local/AWS/Vagrant; clic [aquí](contenedor)
++ De esta manera se cubren las herramientas de mayor aceptación: Docker + GitHub + AWS
 
 ## Licencia
 GNU GENERAL PUBLIC LICENSE (Versión 3, 29 de Junio de 2007).

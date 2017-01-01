@@ -40,7 +40,7 @@ Arrancamos un contenedor, que llamaremos myserver, mapeando el puerto 80 del con
 
 Con Vagrant especificando el proveedor Docker podemos *dockerizar* contenedores, pero antes debemos preparar el [Vagrantfile](Vagrantfile), luego:
 
-`vagrant up --provider=docker`
+`sudo vagrant up --provider=docker`
 
 De esta manera podemos aprovechar las virtudes de Docker y/o Vagrant para nuestros ambientes, ya sean de test, desarrollo y/o producción.
 
