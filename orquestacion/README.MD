@@ -10,7 +10,7 @@ Se ha usado Vagrant, que permiten montar una imagen (box), mediante ella realiza
 
 `sudo apt-get install vagrant`
 
-2. Descargarla de https://www.vagrantup.com/downloads.html e instalarla (en Linux)
+1. Descargarla de https://www.vagrantup.com/downloads.html e instalarla (en Linux)
 
 `wget https://releases.hashicorp.com/vagrant/1.8.7/vagrant_1.8.7_x86_64.deb`
 
@@ -105,4 +105,8 @@ Si quisiéramos conectarnos:
 `vagrant ssh nombre-box-vagrant`
 
 Imágenes del proceso [aquí](https://github.com/mmaguero/Ejercicios-CC16-17-MII/tree/master/imgs/hitos/3/AmazonWebServices)
+
+##Vagrant y Docker
+
+Ir a la sección de *Contenedores*, clic [aquí](../contenedor/README.MD#vagrant-y-docker) 
 
