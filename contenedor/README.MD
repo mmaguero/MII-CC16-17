@@ -30,7 +30,7 @@ Una vez instalado y configurado, podemos ejecutar:
 
 `sudo docker run -d -p puerto:80 --name myserver mmaguero/mii-cc16-17`
 
-Arrancamos un contenedor, que llamaremos myserver, mapeando el puerto 80 del contenedor con el no. de *puerto* de la máquina anfitriona que indiquemos, a partir de la imagen *mmaguero/becalbot* (http://localhost:90/)
+Arrancamos un contenedor, que llamaremos myserver, mapeando el puerto 80 del contenedor con el no. de *puerto* de la máquina anfitriona que indiquemos, a partir de la imagen *mmaguero/mii-cc16-17* (http://localhost:90/)
 
 [Aquí](https://github.com/mmaguero/Ejercicios-CC16-17-MII/blob/master/Contenedores/README.md#hito-4) se ven unos print-screens del proceso...
 
