@@ -1,7 +1,7 @@
 # MII-CC16-17
 Proyecto de la asignatura **Cloud Computing: Fundamentos e Infraestructura** del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr
 
-*Actualizado el 31-12-2016*
+*Actualizado el 16-01-2017
 
 # becalbot : Bot de Telegram para la gestión de requerimientos 
 Consiste en el despliegue de un **bot de telegram**, para lo que utilizaremos *pyTelegramBotAPI*, una API para realizar bots en Telegram.
@@ -59,7 +59,9 @@ Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utili
 
 ## Contenedores
 + Herramienta: Docker. 
-+ Objetivo: Valerse de Docker para el uso de contenedores en un ambiente completo: crear un repositorio en Docker Hub sincronizado con GitHub y una instancia en local/AWS/Vagrant; clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/contenedor)
++ Objetivo: Valerse de Docker para el uso de contenedores en un ambiente completo: crear un repositorio en Docker Hub sincronizado con GitHub y una instancia en local/AWS/Vagrant; clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/contenedor/)
+  - [Dockerfile](https://github.com/mmaguero/MII-CC16-17/blob/master/Dockerfile)
+  - [Docker Hub](https://hub.docker.com/r/mmaguero/mii-cc16-17/)
 + De esta manera se cubren las herramientas de mayor aceptación: Docker + GitHub + AWS
 
 ## Licencia
