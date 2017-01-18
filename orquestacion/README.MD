@@ -40,7 +40,7 @@ Montaremos una máquina virtual para VirtualBox pero desde Vagrant, cuyo propós
 
 ###Montamos la imagen
 
-+ `vagrant box add https://atlas.hashicorp.com/ARTACK/boxes/debian-jessie`
++ `vagrant box add https://atlas.hashicorp.com/ARTACK/boxes/debian-jessie` o puedes buscar otra [aquí](http://www.vagrantbox.es/) o [aquí](https://atlas.hashicorp.com/debian)
 
 `vagrant init`
 
@@ -96,13 +96,15 @@ Primero debemos configurar el entorno de AWS, [aquí](http://docs.aws.amazon.com
 
 Creamos un [Vagrantfile](https://github.com/mmaguero/MII-CC16-17/tree/master/orquestacion/AmazonWebServices) apropiado, allí provisionaremos con [Chef-Solo](https://github.com/mmaguero/MII-CC16-17/tree/master/orquestacion/AmazonWebServices) ambas, antes exportamos las variables con el fichero antes mencionado.
 
-`source aws-credentials`
+`source aws_source.sh`
+
+`vagrant box add cloud https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box`
 
 `vagrant up --provider=aws`
 
 Si quisiéramos conectarnos:
 
-`vagrant ssh nombre-box-vagrant`
+`vagrant ssh nombre-box-vagrant` aka *cloud*
 
 Imágenes del proceso [aquí](https://github.com/mmaguero/Ejercicios-CC16-17-MII/tree/master/imgs/hitos/3/AmazonWebServices)
 
