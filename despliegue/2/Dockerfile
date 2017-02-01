@@ -13,6 +13,9 @@ USER becalbot
 RUN mkdir -p /home/becalbot
 WORKDIR /home/becalbot
 
+RUN easy_install pip
+RUN pip install --upgrade pip
+
 COPY requirements.txt /tmp/
 RUN python -m pip install --requirement /tmp/requirements.txt
 COPY . /tmp/
