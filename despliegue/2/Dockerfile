@@ -3,7 +3,7 @@ MAINTAINER mmaguero <maguero@correo.ugr.es>
 
 RUN apk update && apk upgrade
 
-RUN apk add git && apk add py3-psycopg2
+RUN apk add git && apk add python-psycopg2
 
 RUN adduser -S -g wheel becalbot
 USER becalbot
