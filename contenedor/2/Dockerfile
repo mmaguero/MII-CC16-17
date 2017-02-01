@@ -1,24 +1,21 @@
-FROM ubuntu:16.04 
+FROM python:2.7-alpine
 MAINTAINER mmaguero <maguero@correo.ugr.es>
 
-ENV PYTHONUNBUFFERED 1 RUN apt-get -y update
+ENV PYTHONUNBUFFERED 1 RUN apk update
 
-RUN apt-get -y update &&  apt-get -y upgrade
+RUN apk update &&  apk upgrade
 
-RUN apt-get -y install git
+RUN apk add git && \
+ apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/main py-psycopg2 && \
+ apk add python-dev
 
-RUN apt-get install -y python-setuptools
-RUN apt-get -y install python-dev
-RUN apt-get -y install build-essential
-RUN apt-get -y install libpq-dev
-RUN apt-get -y install python-reportlab
-RUN easy_install pip
-RUN pip install --upgrade pip
-RUN python -m pip install Flask
-RUN python -m pip install Flask-SQLAlchemy
-RUN python -m pip install pyTelegramBotAPI
+COPY requirements.txt /tmp/
+RUN easy_install pip && \
+ pip install --upgrade pip  && \
+ pip install --requirement /tmp/requirements.txt
+COPY . /tmp/
 
-RUN apt-get -y install postgresql
-RUN apt-get -y install postgresql-contrib
-RUN apt-get -y install python-psycopg2
+RUN apk add postgresql && \
+ apk add postgresql-contrib
+
 
