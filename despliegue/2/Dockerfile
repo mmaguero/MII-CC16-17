@@ -3,7 +3,7 @@ MAINTAINER mmaguero <maguero@correo.ugr.es>
 
 RUN apk update && apk upgrade
 
-RUN apk add git && apk add python-psycopg2
+RUN apk add git && apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/main py-psycopg2
 
 RUN adduser -S -g wheel becalbot
 USER becalbot

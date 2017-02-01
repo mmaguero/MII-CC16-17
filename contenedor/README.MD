@@ -16,7 +16,7 @@ Una vez instalado el contenedor, podemos acceder al mismo:
 
 Para crear su propio contenedor en Docker Hub y sincronizarlo con GitHub puede seguir este [link](https://docs.docker.com/docker-hub/builds/).
 
-[Aquí](https://github.com/mmaguero/MII-CC16-17/blob/master/Dockerfile) puede ver el Dockerfile del contenedor instanciado, o bien, [aquí](https://hub.docker.com/r/mmaguero/mii-cc16-17/). [Aquí](https://github.com/mmaguero/Ejercicios-CC16-17-MII/blob/master/Contenedores/README.md#hito-4) se ven unos print-screens del proceso...
+[Aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/contenedor/) puede ver el Dockerfile del contenedor instanciado, o bien, [aquí](https://hub.docker.com/r/mmaguero/mii-cc16-17/). [Aquí](https://github.com/mmaguero/Ejercicios-CC16-17-MII/blob/master/Contenedores/README.md#hito-4) se ven unos print-screens del proceso...
 
 ##Docker Machine, cloud
 
