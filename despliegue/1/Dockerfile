@@ -1,13 +1,13 @@
 FROM alpine 
 MAINTAINER mmaguero <maguero@correo.ugr.es>
 
-RUN apt-get -y update && apt-get -y upgrade
+RUN apk -y update && apk -y upgrade -U -a
 
-RUN apt-get -y install git
-RUN apt-get -y install nodejs
-RUN apt-get -y install npm
-RUN apt-get -y install mongodb
-RUN apt-get -y install mongodb-server
+RUN apk -y add git
+RUN apk -y add nodejs
+RUN apk -y add npm
+RUN apk -y add mongodb
+RUN apk -y add mongodb-server
 RUN service mongodb restart
 
 RUN npm install mongoose
