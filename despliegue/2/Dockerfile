@@ -1,5 +1,5 @@
 FROM python:2-alpine 
-MAINTAINER mmaguero <maguero@correo.ugr.es>
+MAINTAINER MMAguero <maguero@correo.ugr.es>
 
 RUN apk update && apk upgrade
 
