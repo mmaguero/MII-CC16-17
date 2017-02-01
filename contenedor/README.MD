@@ -6,7 +6,7 @@
 
 Para la instalación en Ubuntu, se puede seguir esta [guía](https://docs.docker.com/engine/installation/linux/ubuntulinux/). Para otros sistemas operativos [aquí](https://docs.docker.com/engine/installation/).
 
-Con Docker instalado, se puede instalar desde Docker Hub la imagen del proyecto (Ubuntu, en su última versión):
+Con Docker instalado, se puede instalar desde Docker Hub la imagen del proyecto (Alpine, en su última versión):
 
 `sudo docker pull mmaguero/mii-cc16-17`
 

@@ -3,7 +3,7 @@ MAINTAINER mmaguero <maguero@correo.ugr.es>
 
 ENV PYTHONUNBUFFERED 1 RUN apt-get -y update
 
-RUN apt-get -y update &&  apt-get -y upgrade
+RUN apt-get -y update && apt-get -y upgrade
 
 RUN apt-get -y install git
 
