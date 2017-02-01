@@ -1,24 +1,15 @@
-FROM node:alpine 
+FROM ubuntu:14.04 
 MAINTAINER mmaguero <maguero@correo.ugr.es>
 
-RUN apk update && apk upgrade
+RUN apt-get -y update &&  apt-get -y upgrade
 
-RUN apk add git && \ 
-  apk add mongodb && \ 
-  apk add mongodb-server
+RUN apt-get -y install git
+RUN apt-get -y install nodejs
+RUN apt-get -y install npm
+RUN apt-get -y install mongodb
+RUN apt-get -y install mongodb-server
+RUN service mongodb restart
 
-RUN adduser -S -g wheel becalbot
-USER becalbot
-
-RUN mkdir -p /home/becalbot
-WORKDIR /home/becalbot
-
-COPY paquetes.json /tmp/
-  RUN npm install
-COPY . /tmp/
-
-EXPOSE 8080
-
-CMD [ "npm", "start" ]
+RUN npm install mongoose
 
 
