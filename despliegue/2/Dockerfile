@@ -1,4 +1,4 @@
-FROM python:3.4-alpine 
+FROM python:2-alpine 
 MAINTAINER mmaguero <maguero@correo.ugr.es>
 
 RUN apk update && apk upgrade
