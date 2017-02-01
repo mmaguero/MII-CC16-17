@@ -1,0 +1,21 @@
+{
+  "author": "mmaguero <maguero@correo.ugr.es>",
+  "name": "becalbot",
+  "description": "BecalBot",
+  "version": "0.0.1",
+  "license": "GPL-3.0",
+  "repository": {
+    "url": "https://github.com/mmaguero/MII-CC16-17.git"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+   "express": "^4.14.1",
+   "mongoose": "^4.8.1",
+   "debug": "^2.6.0",
+   "winston": "^2.3.1"
+  }
+
+}

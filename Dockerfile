@@ -1,40 +1,35 @@
-FROM alpine
+FROM ubuntu
 MAINTAINER mmaguero <maguero@correo.ugr.es>
 
-ENV PYTHONUNBUFFERED 1 RUN apk update
+ENV PYTHONUNBUFFERED 1 RUN apt-get -y update
 
-RUN apk update 
-RUN apk upgrade
+RUN apt-get -y update &&  apt-get -y upgrade
 
-RUN apk add git
-
-RUN apk add git
-RUN apk add nodejs
-RUN apk add npm
-RUN apk add mongodb
-RUN apk add mongodb-server
+RUN apt-get -y install git
+RUN apt-get -y install nodejs
+RUN apt-get -y install npm
+RUN apt-get -y install mongodb
+RUN apt-get -y install mongodb-server
 RUN service mongodb restart
 
 RUN npm install mongoose
-RUN npm install debug --save
-RUN npm install winston --save 
 
-RUN apk add -y python-setuptools
-RUN apk add python-dev
-RUN apk add build-essential
-RUN apk add libpq-dev
-RUN apk add python-reportlab
+RUN apt-get install -y python-setuptools
+RUN apt-get -y install python-dev
+RUN apt-get -y install build-essential
+RUN apt-get -y install libpq-dev
+RUN apt-get -y install python-reportlab
 RUN easy_install pip
 RUN pip install --upgrade pip
 RUN python -m pip install Flask
 RUN python -m pip install Flask-SQLAlchemy
 RUN python -m pip install pyTelegramBotAPI
 
-RUN apk add postgresql
-RUN apk add postgresql-contrib
-RUN apk add python-psycopg2
+RUN apt-get -y install postgresql
+RUN apt-get -y install postgresql-contrib
+RUN apt-get -y install python-psycopg2
 
-RUN apk add apache2
+RUN apt-get install apache2 -y
 RUN echo "<h1>Apache with Docker</h1>" > /var/www/html/index.html
 EXPOSE 80
 ENTRYPOINT apache2ctl -D FOREGROUND	

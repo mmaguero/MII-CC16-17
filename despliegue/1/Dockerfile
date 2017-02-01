@@ -1,17 +1,21 @@
-FROM alpine 
+FROM node:alpine 
 MAINTAINER mmaguero <maguero@correo.ugr.es>
 
-RUN apk -y update && apk -y upgrade -U -a
+RUN apk update && apk upgrade
 
-RUN apk -y add git
-RUN apk -y add nodejs
-RUN apk -y add npm
-RUN apk -y add mongodb
-RUN apk -y add mongodb-server
-RUN service mongodb restart
+RUN apk add git
 
-RUN npm install mongoose
-RUN npm install debug --save
-RUN npm install winston --save  
+RUN adduser -S -g wheel becalbot
+USER becalbot
 
+RUN mkdir -p /home/becalbot
+WORKDIR /home/becalbot
+
+COPY paquetes.json /tmp/
+RUN npm install
+COPY . /tmp/
+
+EXPOSE 8080
+
+CMD [ "npm", "start" ]
 

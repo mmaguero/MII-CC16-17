@@ -1,4 +1,4 @@
-FROM alpine 
+FROM ubuntu:14.04 
 MAINTAINER mmaguero <maguero@correo.ugr.es>
 
 RUN apt-get -y update &&  apt-get -y upgrade

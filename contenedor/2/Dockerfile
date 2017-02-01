@@ -1,4 +1,4 @@
-FROM alpine 
+FROM ubuntu:16.04 
 MAINTAINER mmaguero <maguero@correo.ugr.es>
 
 ENV PYTHONUNBUFFERED 1 RUN apt-get -y update
