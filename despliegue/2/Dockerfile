@@ -1,4 +1,4 @@
-FROM python:2-alpine 
+FROM python:alpine
 MAINTAINER MMAguero <maguero@correo.ugr.es>
 
 ENV PYTHONUNBUFFERED 1 RUN apk update
