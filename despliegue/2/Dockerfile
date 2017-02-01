@@ -1,22 +1,17 @@
-FROM python:alpine
-MAINTAINER MMAguero <maguero@correo.ugr.es>
+FROM python:2.7-alpine
+MAINTAINER mmaguero <maguero@correo.ugr.es>
 
 ENV PYTHONUNBUFFERED 1 RUN apk update
 
-RUN apk update && apk upgrade
+RUN apk update &&  apk upgrade
 
-RUN apk add git && apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/main py-psycopg2
-
-RUN adduser -S -g wheel becalbot
-USER becalbot
-
-RUN mkdir -p /home/becalbot
-WORKDIR /home/becalbot
-
-RUN easy_install pip
-RUN pip install --upgrade pip
+RUN apk add git && \
+ apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/main py-psycopg2 && \
+ apk add python-dev
 
 COPY requirements.txt /tmp/
-RUN python -m pip install --requirement /tmp/requirements.txt
+RUN easy_install pip && \
+ pip install --upgrade pip  && \
+ pip install --requirement /tmp/requirements.txt
 COPY . /tmp/
 
