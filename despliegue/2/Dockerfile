@@ -14,6 +14,6 @@ RUN mkdir -p /home/becalbot
 WORKDIR /home/becalbot
 
 COPY requirements.txt /tmp/
-RUN python pip install --requirement /tmp/requirements.txt
+RUN python -m pip install --requirement /tmp/requirements.txt
 COPY . /tmp/
 
