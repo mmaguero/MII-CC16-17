@@ -1,7 +1,7 @@
 # MII-CC16-17
 Proyecto de la asignatura **Cloud Computing: Fundamentos e Infraestructura** del Máster Universitario en Ingeniería Informática de la ETSIIT, UGr
 
-*Actualizado el 16-01-2017
+*Actualizado el 01/02/2017*
 
 # becalbot : Bot de Telegram para la gestión de requerimientos 
 Consiste en el despliegue de un **bot de telegram**, para lo que utilizaremos *pyTelegramBotAPI*, una API para realizar bots en Telegram.
@@ -13,7 +13,6 @@ Este bot apoyará a las gestiones de requerimientos de un ente gubernamental del
 Actualmente, debido al gran número de beneficiarios del programa gubernamental, se hace díficil poder gestionar las solicitudes de requerimientos en tiempo y en forma de todos ellos. Estas solicitudes se realizan vía e-mail, incluso la confirmación de recepción de las mismas lleva días, por lo que su resolución y respuesta muchos días más, por lo tanto un bot que gestione y administre estos requerimientos resulta útil.
 
 # Tecnología
-
 ## Arquitectura
 En principio utilizaremos la arquitectura basada en microservicios, donde estos son independientes entre si y por lo tanto, pueden ser desarrollados, desplegados y testeados de manera indiviual. Es deseable que el bot funcionará como API, donde el usuario se comunicara con el bot lo más natural posible.
 
@@ -53,6 +52,7 @@ Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utili
   - Imagen de Ubuntu Server 16.04 sobre AWS, para Ansible clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/ansible), para Chef [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/provision/ubuntu16.04/chef). 
 
 ## Orquestación
+
 + Herramienta: Vagrant. 
 + Objetivo: Orquestar un ambiente software completo, clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/orquestacion/).
 + Se elige trabajar con instancias de AWS y VirtualBox por su popularidad y estabilidad, OpenStack por su gran capacidad y alcance (aka TryStack).
@@ -61,11 +61,23 @@ Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utili
 
 + Herramienta: Docker. 
 + Objetivo: Valerse de Docker para el uso de contenedores en un ambiente completo: crear un repositorio en Docker Hub sincronizado con GitHub y una instancia en local/AWS/Vagrant; clic [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/contenedor/)
-  - [Dockerfile All](https://github.com/mmaguero/MII-CC16-17/blob/master/Dockerfile)
-    1. [Dockerfile Tareas](https://github.com/mmaguero/MII-CC16-17/blob/master/contenedor/1/Dockerfile)
-	2. [Dockerfile Solicitudes](https://github.com/mmaguero/MII-CC16-17/blob/master/contenedor/2/Dockerfile)
-  - [Docker Hub](https://hub.docker.com/r/mmaguero/mii-cc16-17/)
+   1. [Dockerfile Tareas](https://github.com/mmaguero/MII-CC16-17/blob/master/contenedor/1/Dockerfile)
+   2. [Dockerfile Solicitudes](https://github.com/mmaguero/MII-CC16-17/blob/master/contenedor/2/Dockerfile)
+   3. [Docker Hub](https://hub.docker.com/r/mmaguero/mii-cc16-17/)
 + De esta manera se cubren las herramientas de mayor aceptación: Docker + GitHub + AWS
+
+## Despliegue
+
+Para llevar a cabo el despliegue final de la aplicación se realizó una miscelánea, de tal manera a aprovechar cada una de las siguientes herramientas:
+
++ Herramientas:
+ - Vagrant (AWS plugin)
+ - AWS (Amazon Linux Ami)
+ - Docker
+ - DockerHub con Alpine
+ - Servicios externos de Daas y Lass
+
+EL porqué de la elección de esta tecnología se justifica en su funcionamiento [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/despliegue/).
 
 ## Licencia
 GNU GENERAL PUBLIC LICENSE (Versión 3, 29 de Junio de 2007).
