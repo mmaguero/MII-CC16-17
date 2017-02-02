@@ -19,11 +19,11 @@ Se han creado dos contenedores, uno para cada servicio, con todos los paquetes u
 
 ###Docker Hub
 
-El Dockerfile del servicio de tareas se encuentra [aquí](1), el de solicitudes [aquí](2), se escribieron siguiendo las recomendaciones y [buenas prácticas](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/). Estos están vinculados a [Docker Hub](https://hub.docker.com/r/mmaguero/mii-cc16-17/) y a su vez a esta cuenta de Github, cada *push* actualiza los contendores creados, que son [cuatro](https://hub.docker.com/r/mmaguero/mii-cc16-17/tags/): service1 y service2, sobre Alpine, para este despliegue final, tareas y solicitudes, sobre Ubuntu, para [contenedor](contenedor).
+El Dockerfile del servicio de tareas se encuentra [aquí](1), el de solicitudes [aquí](2), se escribieron siguiendo las recomendaciones y [buenas prácticas](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/). Estos están vinculados a [Docker Hub](https://hub.docker.com/r/mmaguero/mii-cc16-17/) y a su vez a esta cuenta de Github, cada *push* actualiza los contendores creados, que son [cuatro](https://hub.docker.com/r/mmaguero/mii-cc16-17/tags/): service1 y service2, sobre Alpine, para este despliegue final, tareas y solicitudes, sobre Ubuntu, para [contenedor](https://github.com/mmaguero/MII-CC16-17/tree/master/contenedor/).
 
 ##Orquestación
 
-La orquestación se hizo con la herramienta Vagrant, sin dudas una herramienta robusta y poderosa. Con Vagrant se orquestan las dos máquinas virtuales en AWS y a su vez se provision con Docker, de este modo, tras una sólo comando `vagrant up --provider=aws` se realiza el despliegue completo de la aplicación para todos los servicios: se crean dos MV en AWS y se coloca el contenedor correspondiente corriendo sobre cada una.
+La orquestación se hizo con la herramienta Vagrant, sin dudas una herramienta robusta y poderosa. Con Vagrant se orquestan las dos máquinas virtuales en AWS y a su vez se provisiona con Docker, de este modo, tras una sólo comando `vagrant up --provider=aws` se realiza el despliegue completo de la aplicación para todos los servicios: se crean dos MV en AWS y se coloca el contenedor correspondiente corriendo sobre cada una.
 
 ##Servicios externos
 
@@ -36,7 +36,6 @@ Estos son servicios que son útiles para externalizar las bases de datos o logs,
 Para gestionar la base de datos del servicio de tareas, se utilizará [MongoLab](https://mlab.com/) como otro servicio pero externo, aunque nos ofrece sólo 500 MB de almacenamiento en bases de datos *MongoDB* de forma gratuita. Para ello debemos crear una cuenta, y por supuesto, crear una fuente de datos, y una vez creada, se pueden utilizar los datos de conexión que proporciona para la aplicación, con *NodeJS* y *mongoose*:
 
 ![mLab](http://www.prowebmerida.com/file/2016/08/crear-usuario-en-mLab.jpg)
-
 Fuentes [1](http://www.prowebmerida.com/migrar-parse-a-mlab/) y [2](http://wikis.fdi.ucm.es/ABD/Tutorial_MongoDB_DBaaS)
 
 ####PG
@@ -44,21 +43,18 @@ Fuentes [1](http://www.prowebmerida.com/migrar-parse-a-mlab/) y [2](http://wikis
 Para gestionar la base de datos del servicio de solicitudes, se utilizará [ElephantSQL](https://www.elephantsql.com/plans.html) como otro servicio pero externo, aunque nos ofrece sólo 20 MB de almacenamiento (menor al caso anterior) en bases de datos *PostgreSQL* de forma gratuita. Para ello debemos crear una cuenta, y como el caso anterior, crear una fuente de datos, y una vez creada, se pueden utilizar los datos de conexión que proporciona para la aplicación, con *Python* y *psycopg2*:
 
 ![ESQL](http://www.dbi-services.com/images/easyblog_images/153/pgcloud3.png)
-
 [Fuente](http://blog.dbi-services.com/a-free-postgresql-cloud-database/)
 
 ###Logging
 
 #####Logsene
 
-[Logsene](https://sematext.com/logsene/) ofrece un servicio de Logging externo, permite agregar logs de varias fuentes, como NodeJS. Existe una cuenta free que gestiona los logs de los ultimos siete días hasta 500 MB por días. Es necesario creae una cuenta gratuita en y configurar en el código fuente lo necesario, en NodeJS, el módulo winston por ejemplo permite esto, el mismo se encuentra en el contendor pertinente.
-
+[Logsene](https://sematext.com/logsene/) ofrece un servicio de Logging externo, permite agregar logs de varias fuentes, como NodeJS. Existe una cuenta free que gestiona los logs de los ultimos siete días hasta 500 MB por día. Es necesario crear una cuenta gratuita en y configurar en el código fuente lo necesario, en NodeJS, el módulo *winston* por ejemplo permite esto, el mismo se encuentra en el [contendor pertinente](1).
 [Fuente](https://sematext.com/logsene/)
 
 ####Papertrail
 
-[Papertrail](https://papertrailapp.com/) es un sistema de logs que ofrece una cuenta gratuita de hasta 100 MB al mes, con logs de hasta siete días atrás. Cabe enfatizar, que su integración con Python es simple, puesto que se integra con el paquete de *logging* (llamado logging) de Python (que viene por defecto desde la versión 2.3) y basta con agregar la dirección de la cuenta.
-
+[Papertrail](https://papertrailapp.com/) es un sistema de logs que ofrece una cuenta gratuita de hasta 100 MB al mes, con logs de hasta siete días atrás. Cabe enfatizar, que su integración con Python es simple, puesto que se integra con el paquete de *logging* (llamado logging) de Python (que viene por defecto desde la versión 2.3) y basta con agregar la dirección de la cuenta y vincularla.
 [Fuente](http://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-python-apps/)
 
 ##Pantallazos
