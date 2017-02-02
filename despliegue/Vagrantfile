@@ -1,0 +1,37 @@
+user = "mmaguero"
+numServers = 2
+
+Vagrant::configure('2') do |config|
+
+ (1..numServers).each do |i|
+
+  config.vm.define :"service#{i}" do |box|
+
+    box.vm.box      = "service#{i}"
+    box.vm.box_url  = 'https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box'
+    box.vm.hostname = "#{user}.miicc1617.service#{i}.edu"
+
+    box.vm.provider :aws do |aws, override|
+      aws.access_key_id     = ENV['AWS_KEY_ID']
+      aws.secret_access_key = ENV['AWS_SECRET_KEY']
+      aws.keypair_name      = ENV['AWS_KEY_NAME']
+      aws.ami               = 'ami-0979b466' #ami
+      aws.region = "eu-central-1"
+      aws.instance_type = "t2.micro"
+      aws.security_groups = ["Administrator_SG_EuCentral1"]
+
+      aws.tags = {
+      'Name' => "service#{i}"
+      }
+
+      override.ssh.username = 'ec2-user'
+      override.ssh.private_key_path = ENV['AWS_KEY_PATH']
+    end
+
+    box.vm.provision "docker" do |d|
+      d.run "service#{i}", image: "#{user}/mii-cc16-17:service#{i}"
+    end
+
+  end
+ end
+end

@@ -68,12 +68,16 @@ Chef es muy utilizado hoy día, incluso posee una comunidad muy activa. Al utili
 
 ## Despliegue
 
+Para llevar a cabo el despliegue final de la aplicación se realizó una miscelánea, de tal manera a aprovechar cada una de las siguientes herramientas:
+
 + Herramientas:
  - Vagrant (AWS plugin)
- - AWS (Ubuntu 16.04)
- - Ansible
- - Docker & DockerHub (Alpine)
- - ...
+ - AWS (Amazon Linux Ami)
+ - Docker
+ - DockerHub con Alpine
+ - Servicios externos de Daas y Lass
+
+EL porqué de la elección de esta tecnología se justifica en su funcionamiento [aquí](https://github.com/mmaguero/MII-CC16-17/tree/master/despliegue/).
 
 ## Licencia
 GNU GENERAL PUBLIC LICENSE (Versión 3, 29 de Junio de 2007).
