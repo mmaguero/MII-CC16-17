@@ -57,6 +57,16 @@ Para gestionar la base de datos del servicio de solicitudes, se utilizará [Elep
 [Papertrail](https://papertrailapp.com/) es un sistema de logs que ofrece una cuenta gratuita de hasta 100 MB al mes, con logs de hasta siete días atrás. Cabe enfatizar, que su integración con Python es simple, puesto que se integra con el paquete de *logging* (llamado logging) de Python (que viene por defecto desde la versión 2.3) y basta con agregar la dirección de la cuenta y vincularla.
 [Fuente](http://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-python-apps/)
 
+##Conclusiones
+
+De esta manera se logra el despliegue completo de la aplicación para todos los servicios; utilizar Docker, Docker Hub, AWS y Vagrant nos permite trabajar de una manera muy escalable, multiplataforma y muy práctica; que tras una previa preparaciòn, todo se resume en una sola línea de comando para poder desplegar en la nube una aplicaciòn.
+
+###Lectura Recomendada
+
++ [Heroku, EC2 (AWS) con Vagrant, Docker, y Dokku](http://blog.clearbit.com/ec2-heroku/)
++ [Una pequeña gran implementación de PaaS](http://dokku.viewdocs.io/dokku/)
++ [Dokku, primeros pasos](http://codehero.co/como-instalar-y-utilizar-dokku/)
+
 ##Pantallazos
 
 Imágenes Docker Hub
