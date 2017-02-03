@@ -38,7 +38,7 @@ Para gestionar la base de datos del servicio de tareas, se utilizará [MongoLab]
 ![mLab](http://www.prowebmerida.com/file/2016/08/crear-usuario-en-mLab.jpg)
 Fuentes [1](http://www.prowebmerida.com/migrar-parse-a-mlab/) y [2](http://wikis.fdi.ucm.es/ABD/Tutorial_MongoDB_DBaaS)
 
-####PG
+####PostgreSQL
 
 Para gestionar la base de datos del servicio de solicitudes, se utilizará [ElephantSQL](https://www.elephantsql.com/plans.html) como otro servicio pero externo, aunque nos ofrece sólo 20 MB de almacenamiento (menor al caso anterior) en bases de datos *PostgreSQL* de forma gratuita. Para ello debemos crear una cuenta, y como el caso anterior, crear una fuente de datos, y una vez creada, se pueden utilizar los datos de conexión que proporciona para la aplicación, con *Python* y *psycopg2*:
 
@@ -47,7 +47,7 @@ Para gestionar la base de datos del servicio de solicitudes, se utilizará [Elep
 
 ###Logging
 
-#####Logsene
+####Logsene
 
 [Logsene](https://sematext.com/logsene/) ofrece un servicio de Logging externo, permite agregar logs de varias fuentes, como NodeJS. Existe una cuenta free que gestiona los logs de los ultimos siete días hasta 500 MB por día. Es necesario crear una cuenta gratuita en y configurar en el código fuente lo necesario, en NodeJS, el módulo *winston* por ejemplo permite esto, el mismo se encuentra en el [contendor pertinente](1).
 [Fuente](https://sematext.com/logsene/)
