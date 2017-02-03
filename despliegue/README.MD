@@ -23,7 +23,7 @@ El Dockerfile del servicio de tareas se encuentra [aquí](1), el de solicitudes 
 
 ##Orquestación
 
-La orquestación se hizo con la herramienta Vagrant, sin dudas una herramienta robusta y poderosa. Con Vagrant se orquestan las dos máquinas virtuales en AWS y a su vez se provisiona con Docker, de este modo, tras una sólo comando `vagrant up --provider=aws` se realiza el despliegue completo de la aplicación para todos los servicios: se crean dos MV en AWS y se coloca el contenedor correspondiente corriendo sobre cada una.
+La orquestación se hizo con la herramienta Vagrant, sin dudas una herramienta robusta y poderosa. Con Vagrant se orquestan las dos máquinas virtuales en AWS y a su vez se provisiona con Docker, de este modo, tras una sólo comando `vagrant up --provider=aws` (aunque antes hay que cargar las credenciales de AWS: `source aws_source.sh`) se realiza el despliegue completo de la aplicación para todos los servicios: se crean dos MV en AWS y se coloca el contenedor correspondiente corriendo sobre cada una.
 
 ##Servicios externos
 
